@@ -169,7 +169,6 @@ nav a:hover ,
   padding: 10px;
 }
 
-
 /*=================================
   banner styling ends here
 =================================*/
@@ -304,10 +303,115 @@ form {
   forms styling ends here
 =================================*/ 
 
+.quiz-page {
+  width: 50%;
+  border-radius: 2px;
+  margin: 80px 25%; 
+  background-color: #fff;
+  -webkit-box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.3);
+}
 
+.quiz-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  background-color: #fff;
+  -webkit-box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
 
+.quiz-user {
+  padding: 15px 3%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: chocolate;
+  color: #fff;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
 
+.quiz-body {
+  padding: 30px;
+  background-color: #ecf0f1;
+}
 
+.quiz-form {
+  width: 100%;
+}
+
+.option-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  list-style-type: none;
+  margin: 30px 0;
+}
+
+ .option-group .option {
+  width: 50%;
+  position: relative;
+  padding: 15px 0% 15px 3%;
+  border-radius: 100px;
+  border: 2px solid transparent;
+  margin: 0 20px 20px;
+  display: block;
+  outline: none;
+  background-color: #fff;
+  text-transform: none;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  display: flex;
+  justify-content: space-between;
+}
+
+#answer {
+  position: absolute;
+  left: -35px;
+}
+
+#questions {
+  padding: 20px;
+}
+
+.option-group .option.active {
+  border: 2px solid #142850;
+  color: #142850;
+}
+
+.quiz-buttons {
+  display: flex;
+  justify-content: center;
+  background: chocolate;
+  padding: 10px;
+  width: 107%;
+}
+
+.quiz-buttons .btn-sub:hover {
+  cursor: pointer;
+  background-color: #fff;
+  color: #142850;
+  -webkit-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
+}
+
+.quiz-buttons .btn-sub{
+  padding: 10px;
+  text-transform: uppercase;
+  color: white;
+  background: #142850;
+}
 
 /*=================================
   main styling ends here
