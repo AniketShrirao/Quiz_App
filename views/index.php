@@ -11,15 +11,20 @@
       </section>  
     <!--banner section end--> 
 <?php 
-if(!isset($_SESSION['user_email'])) { 
-if(isset($_GET['error']) ) {
-  include_once "includes/errors.php";
-  echo '<span class="error-span">'.$error.'</span>';
-} 
+  if(!isset($_SESSION['user_email'])) { 
+    if(isset($_GET['error']) ) {
+      include_once "errors.php";
+      echo '<span class="error error-span">'.$error.'</span>';
+    } 
+    if (isset($_POST['login_submit'])) {
+      require_once '../controller/validation.php';
+      $validator = new Login_Validation();
+      $validator->loginValidator($_POST['email'],$_POST['password']);
+    }
 ?>
   <div class="login-form">
     <h3>Login Form</h3>
-    <form action="../controller/login.inc.php" method="POST"> 
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST"> 
       <div class="form-group">
         <input type="text" name="email" placeholder="Email...">
       </div>
@@ -36,5 +41,9 @@ if(isset($_GET['error']) ) {
 <!--main section end-->
 <?php 
   include_once 'footer.php';
+} else {
+  session_unset();
+  session_destroy();
+  header("Location: signup.php");
 }
 ?>

@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
 <!doctype html>
 <html lang="en"> 
 <head>
@@ -21,6 +24,15 @@
             <a href="index.html" title="quizapp"><img src="https://via.placeholder.com/145x30" alt="quizapp"></a>
           </h1>
         </div>
+        <nav>
+          <ul>
+            <?php if(isset($_SESSION['user_email'])) { ?>
+            <li>
+              <a href="../controller/logout.inc.php" title="Logout">Logout</a>
+            </li>
+            <?php } ?>
+          </ul>
+        </nav> 
       </div>
     </header>
     <!--header section end-->
