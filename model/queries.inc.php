@@ -45,13 +45,35 @@ class queries extends Dbh{
 			while($row_two = mysqli_fetch_array($ans)) {
 				echo '
 				<li class="option">
-				<input type="radio" id="answer" name="'.$row_two['question_id'].'" value="'.$row_two['answer'].'">
+				<input type="radio" id="answer" name="'.$row_two['question_id'].'" value="'.$row_two['answer_id'].'">
 				<div class="answer">'.$row_two['answer'].'</div>
 				</li>';
 			}
 			echo '</ul>';
 		}
 		echo '</div>';
+	}
+
+	public function checkAnswer($user_answer) 
+	{
+		$sql = "SELECT * FROM questions WHERE answer_id = ?;";
+		$conn = $this->connect();
+		$stmt = mysqli_stmt_init($conn);
+		if(!mysqli_stmt_prepare($stmt, $sql)) {
+			header("Location: ../views/quiz.php?error=SqlError");
+			exit();
+		}
+		else {
+			mysqli_stmt_bind_param($stmt,"s",$user_answer);
+			mysqli_stmt_execute($stmt);
+			$result = mysqli_stmt_get_result($stmt);
+			$result_check = mysqli_num_rows($result);
+			if($result_check > 0) { 
+				return 1;
+			} else {
+				return 0;
+			}
+		}
 	}
 
 }

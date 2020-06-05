@@ -5,7 +5,7 @@
     <!-- quiz heder start -->
     <div class="quiz-header">
       <div class="quiz-user">
-        <span class="user">user name</span>
+        <span class="user"><?php echo $_SESSION['username'] ?></span>
       </div>
     </div>
     <!-- quiz heder end -->
@@ -24,7 +24,7 @@
           <!-- quiz control buttons start-->
             <div class="quiz-buttons">
               <div>
-              <input type="submit" class="btn-sub" value="submit">
+              <input type="submit" class="btn-sub" name="quiz_submit" value="submit">
               </div>              
             </div> 
           <!-- quiz control buttons end-->   
