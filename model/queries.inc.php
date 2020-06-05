@@ -23,5 +23,36 @@ class queries extends Dbh{
 		}
 	}
 
+	public function displayData() 
+	{
+	function pre_r($array) {
+		echo '<pre>';
+		print_r($array);
+		echo '</pre>';
+		}
+		$sql = "SELECT * FROM questions;";
+		$conn = $this->connect();
+		$questions = mysqli_query($conn ,$sql);
+		$row = mysqli_fetch_array($questions);
+
+		echo '<div id="questions">';
+		while($row = mysqli_fetch_array($questions)) {
+			echo '<h3>'.$row['question'].'</h3>';
+			echo '<ul class="option-group">';
+			$answers = "SELECT * FROM answers WHERE question_id = ".$row['questions_id'].";";
+			$conn = $this->connect();
+			$ans = mysqli_query($conn ,$answers);
+			while($row_two = mysqli_fetch_array($ans)) {
+				echo '
+				<li class="option">
+				<input type="radio" id="answer" name="'.$row_two['question_id'].'" value="'.$row_two['answer'].'">
+				<div class="answer">'.$row_two['answer'].'</div>
+				</li>';
+			}
+			echo '</ul>';
+		}
+		echo '</div>';
+	}
+
 }
 ?>

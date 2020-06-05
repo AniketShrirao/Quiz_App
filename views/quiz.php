@@ -13,27 +13,13 @@
     <div class="quiz-body">
       <!-- questions and options -->
       <form action="../controller/quiz.inc.php" class="quiz-form" method="post">
-          <div id="questions">
-            <h3> </h3>
-            <ul class="option-group">
-              <li class="option">
-              <input type="radio" id="answer" name="fourth_answer" value="">
-              <div class="answer"> </div>
-              </li>
-              <li class="option">
-              <input type="radio" id="answer" name="fourth_answer" value="">
-              <div class="answer"> </div>
-              </li>
-              <li class="option">
-              <input type="radio" id="answer" name="fourth_answer" value="">
-              <div class="answer"> </div>
-              </li>
-              <li class="option">
-              <input type="radio" id="answer" name="fourth_answer" value="">
-              <div class="answer"> </div>
-              </li>
-            </ul> 
-          </div>
+      <?php 
+        if(isset($_SESSION['user_email'])) { 
+          require_once '../model/queries.inc.php';
+          $query = new queries;
+          $query->displayData();
+        }
+        ?>
           <!-- questions and options end-->
           <!-- quiz control buttons start-->
             <div class="quiz-buttons">
