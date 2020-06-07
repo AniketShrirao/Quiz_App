@@ -8,13 +8,87 @@
    v2.0 | 20110126
    License: none (public domain)
    ========================================================================== */
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
-blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img,
-ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center,
-dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody,
-tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure,
-figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -24,17 +98,30 @@ time, mark, audio, video {
 }
 
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
   display: block;
 }
 
 /* Force scrollbar */
-html { overflow-y: scroll; }
+html {
+  overflow-y: scroll;
+}
 
 /* Align radios and text inputs with their label */
 
-input[type='radio'] { vertical-align: text-bottom; }
+input[type='radio'] {
+  vertical-align: text-bottom;
+}
 
 /* Hand cursor on clickable input elements */
 label,
@@ -50,7 +137,9 @@ strong {
   font-size: inherit;
 }
 
-em { font-style: italic; }
+em {
+  font-style: italic;
+}
 
 img {
   width: 100%;
@@ -66,8 +155,13 @@ sup {
   line-height: 0;
 }
 
-sup { top: -.7em; }
-sub { bottom: -.25em; }
+sup {
+  top: -.7em;
+}
+
+sub {
+  bottom: -.25em;
+}
 
 /* 1.2. Clear Fix
    ========================== */
@@ -78,8 +172,13 @@ sub { bottom: -.25em; }
   content: " ";
 }
 
-.cf:after { clear: both; }
-.cf { *zoom: 1; }
+.cf:after {
+  clear: both;
+}
+
+.cf {
+  *zoom: 1;
+}
 
 /*for all*/
 body {
@@ -87,9 +186,9 @@ body {
   font-family: sans-serif;
 }
 
-a { 
+a {
   display: inline-block;
-  text-decoration: none; 
+  text-decoration: none;
 }
 
 li {
@@ -100,20 +199,31 @@ li {
 /*for wrapper*/
 .wrapper {
   max-width: 1360px;
-  width: 86%; 
+  width: 86%;
   margin: 0 auto;
 }
+
 /*=================================
   Header styling starts here
 =================================*/
 
-header {background:#363636;}
+header {
+  background: #363636;
+}
 
-header .wrapper {display: flex;}
+header .wrapper {
+  display: flex;
+}
 
 .logo {
   padding: 35px 0 25px 0px;
   flex: 1.02;
+}
+
+.logo img {
+  border-radius: 100%;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+  border: 5px solid lightyellow;
 }
 
 nav {
@@ -126,7 +236,9 @@ nav ul {
   justify-content: center;
 }
 
-nav li { padding: 0px 19px;}
+nav li {
+  padding: 0px 19px;
+}
 
 nav a {
   color: #fff;
@@ -137,13 +249,14 @@ nav a {
   text-transform: uppercase;
 }
 
-nav a:hover ,
+nav a:hover,
 .active {
-  color: #69ad31;}
+  color: #69ad31;
+}
 
 /*=================================
   Header styling ends here
-=================================*/  
+=================================*/
 
 /*=================================
   main styling starts here
@@ -153,7 +266,11 @@ nav a:hover ,
   banner styling starts here
 =================================*/
 
-.banner { background: url('https://source.unsplash.com/random/1350x460'); }
+.banner {
+  background: url('https://source.unsplash.com/random/1350x460');
+  background-position: center;
+  background-size: cover;
+}
 
 .banner .wrapper {
   display: flex;
@@ -170,7 +287,7 @@ nav a:hover ,
   font-size: 64px;
   font-weight: 700;
   text-transform: uppercase;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0, 0, 0, 0.7);
   padding: 10px;
 }
 
@@ -180,10 +297,12 @@ nav a:hover ,
 
 /*=================================
   forms styling starts here
-=================================*/ 
+=================================*/
 
 .signup-form,
-.login-form { position: relative; }
+.login-form {
+  position: relative;
+}
 
 .signup-form h3,
 .login-form h3 {
@@ -202,7 +321,7 @@ form {
   margin: 0 auto 60px;
 }
 
-.form-control input{
+.form-control input {
   width: 63.2%;
   display: flex;
   justify-content: center;
@@ -225,11 +344,11 @@ form {
 .submit {
   margin-top: 15px;
   padding: 5px 26px;
-  font-size: 15px;  
-  background:#69ad31;
+  font-size: 15px;
+  background: #69ad31;
   letter-spacing: 1.5px;
   border-radius: 4px;
-  color: rgba(255,255,255,0.9);
+  color: rgba(255, 255, 255, 0.9);
   border-radius: 4px;
   transition: all 0.3s;
 }
@@ -265,7 +384,9 @@ form {
   background: #78b546;
 }
 
-.users { flex-wrap: wrap;}
+.users {
+  flex-wrap: wrap;
+}
 
 .box {
   transition: box-shadow .3s;
@@ -279,8 +400,9 @@ form {
   padding: 16px;
   margin: 15px;
 }
+
 .box:hover {
-  box-shadow: 0 0 11px rgba(33,33,33,.2); 
+  box-shadow: 0 0 11px rgba(33, 33, 33, .2);
 }
 
 .no-user {
@@ -298,23 +420,23 @@ form {
 
 .not-a-player {
   position: absolute;
-    bottom: -30px;
-    display: flex;
-    text-align: center;
-    left: 46%;
+  bottom: -30px;
+  display: flex;
+  text-align: center;
+  left: 46%;
 }
 
- /*=================================
+/*=================================
   forms styling ends here
-=================================*/ 
+=================================*/
 
 .quiz-page {
   width: 50%;
   border-radius: 2px;
-  margin: 80px 25%; 
+  margin: 80px 25%;
   background-color: #fff;
   -webkit-box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.3);
-          box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.3);
 }
 
 .quiz-header {
@@ -326,7 +448,7 @@ form {
   justify-content: space-between;
   background-color: #fff;
   -webkit-box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.1);
-          box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.1);
   z-index: 1;
 }
 
@@ -338,8 +460,8 @@ form {
   background: chocolate;
   color: #fff;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .quiz-body {
@@ -359,12 +481,12 @@ form {
   -ms-flex-direction: column;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-          flex-direction: column;
+  flex-direction: column;
   list-style-type: none;
   margin: 30px 0;
 }
 
- .option-group .option {
+.option-group .option {
   width: 50%;
   position: relative;
   padding: 15px 0% 15px 3%;
@@ -391,7 +513,7 @@ form {
 }
 
 .error {
-  top:460px;
+  top: 460px;
 }
 
 .option-group .option.active {
@@ -412,14 +534,146 @@ form {
   background-color: #fff;
   color: #142850;
   -webkit-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
-          box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
 }
 
-.quiz-buttons .btn-sub{
+.quiz-buttons .btn-sub {
   padding: 10px;
   text-transform: uppercase;
   color: white;
   background: #142850;
+}
+
+.outcome {
+  padding: 200px;
+}
+
+.result {
+  font-size: 65px;
+  color: brown;
+  font-family: fantasy;
+  text-align: center;
+  padding: 10px;
+  border: 10px solid;
+}
+
+.result-leaderboard {
+  margin: 40px;
+  text-align: center;
+  padding: 10px;
+  border: 4px solid;
+  color: blueviolet;
+  font-size: 20px;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+
+.Ranking {
+  overflow: auto;
+  box-sizing: border-box;
+  padding: 20px 0 112px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.Ranking li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  box-shadow: 5px 10px 18px rgba(0, 0, 0, 0.2);
+  position: relative;
+  width: 90%;
+  background-color: #004445;
+  cursor: pointer;
+  /* opacity: 0; */
+  border-radius: 25px;
+  margin: 5px auto;
+}
+
+.slide-in {
+  animation: slideLeft 0.6s ease-in-out forwards;
+}
+
+@keyframes slideLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.Ranking li:hover:not(.top) {
+  background-color: cornflowerblue;
+}
+
+.Ranking h4,
+.Ranking span {
+  padding-bottom: 0;
+  color: #FFF;
+  font-size: 24px;
+}
+
+.Ranking h4 {
+  padding-right: 20%;
+  font-size: 55px;
+  color: chartreuse;
+}
+
+.Ranking figure {
+  flex-basis: 7%;
+  margin-right: 17%;
+  padding: 10px;
+}
+
+.Ranking img {
+  border-radius: 25px;
+}
+
+.Ranking .rating {
+  opacity: 1;
+  font-size: 45px;
+  color: bisque;
+}
+
+
+.Ranking .rating::before {
+  text-shadow: 5px 10px 18px rgba(0, 0, 0, 0.5);
+}
+
+.Ranking li div {
+  position: absolute;
+  right: 5%;
+}
+
+li.rank-head {
+  display: flex;
+  padding: 20px;
+  margin: 5px auto;
+  justify-content: space-between;
+  align-items: center;
+  color: aliceblue;
+  font-size: 36px;
+  width: 85%;
+  border-radius: unset;
+}
+
+li.top {
+  background: #01171F;
+}
+
+.leaderboard-title {
+  padding: 20px;
+  text-align: center;
+  font-size: 82px;
+  color: blueviolet;
+  text-transform: uppercase;
+  margin: 50px 0 0;
 }
 
 /*=================================
@@ -428,7 +682,7 @@ form {
 
 /*=================================
   footer styling starts here
-=================================*/ 
+=================================*/
 
 footer {
   padding-top: 34px;
@@ -441,7 +695,9 @@ footer .wrapper {
   flex-direction: column;
 }
 
-.social {margin-bottom: 38px;}
+.social {
+  margin-bottom: 38px;
+}
 
 .social a {
   padding: 8px;
@@ -469,10 +725,13 @@ footer p {
 
 footer a {
   transition: all 0.3s;
-  color:rgba(255,255,255,0.4);
+  color: rgba(255, 255, 255, 0.4);
 }
 
-footer a:hover {color: rgba(255,255,255,0.9);}
- /*=================================
+footer a:hover {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/*=================================
   footer styling ends here
-=================================*/ 
+=================================*/

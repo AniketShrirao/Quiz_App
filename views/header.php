@@ -21,7 +21,7 @@
       <div class="wrapper">
         <div class="logo">
           <h1>
-            <a href="index.html" title="quizapp"><img src="https://via.placeholder.com/145x30" alt="quizapp"></a>
+            <a href="index.html" title="quizapp"><img src="https://via.placeholder.com/100x100/A4DE02/000/?text=QZ" alt="quizapp"></a>
           </h1>
         </div>
         <nav>
@@ -29,6 +29,11 @@
             <?php if(isset($_SESSION['user_email'])) { ?>
             <li>
               <a href="../controller/logout.inc.php" title="Logout">Logout</a>
+            </li>
+            <?php } ?>
+            <?php if(isset($_GET['correct_answer'])) { ?>
+            <li>
+              <a href="../views/leaderboard.php" title="leaderboard">Leaderboard</a>
             </li>
             <?php } ?>
           </ul>

@@ -1,11 +1,12 @@
 <?php 
   include_once 'header.php'; 
+ if($_SESSION['block'] == true) { header("Location: ../views/index.php"); } 
 ?>  
   <div class="quiz-page">
     <!-- quiz heder start -->
     <div class="quiz-header">
       <div class="quiz-user">
-        <span class="user"><?php echo $_SESSION['username'] ?></span>
+        <span class="user"><?php if(isset($_SESSION['user_email'])) { echo $_SESSION['user_name']; } ?></span>
       </div>
     </div>
     <!-- quiz heder end -->
@@ -21,6 +22,9 @@
         }
         ?>
           <!-- questions and options end-->
+          <div class="form-group">
+            <input type="hidden" name="status" value="1">
+          </div>
           <!-- quiz control buttons start-->
             <div class="quiz-buttons">
               <div>

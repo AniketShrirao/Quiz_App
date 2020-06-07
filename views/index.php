@@ -20,6 +20,9 @@
       require_once '../controller/validation.php';
       $validator = new Login_Validation();
       $validator->loginValidator($_POST['email'],$_POST['password']);
+      require_once '../model/queries.inc.php';
+      $query = new queries;
+      $has_quizzed = $query->checkStatus($_POST['email']);
     }
 ?>
   <div class="login-form">
