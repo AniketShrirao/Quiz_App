@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Jun 05, 2020 at 05:59 PM
--- Server version: 10.1.37-MariaDB
--- PHP Version: 7.3.0
+-- Host: 127.0.0.1
+-- Generation Time: Jun 07, 2020 at 09:44 PM
+-- Server version: 10.4.6-MariaDB
+-- PHP Version: 7.1.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -67,6 +67,30 @@ INSERT INTO `answers` (`answer_id`, `answer`, `question_id`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `leaderboard`
+--
+
+CREATE TABLE `leaderboard` (
+  `rank_id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `score` tinyint(4) NOT NULL,
+  `quizzed_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `leaderboard`
+--
+
+INSERT INTO `leaderboard` (`rank_id`, `name`, `email`, `score`, `quizzed_at`) VALUES
+(1, 'Aniket', 'ashrirao03@gmail.com', 6, '2020-06-07 18:42:15'),
+(2, 'Yadnesh', 'yadnesh@gmail.com', 4, '2020-06-07 18:54:38'),
+(3, 'Rohan', 'Rohan@gmail.com', 6, '2020-06-07 18:56:35'),
+(4, 'Aditya', 'Adityas@prdxn.com', 0, '2020-06-07 19:16:25');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `questions`
 --
 
@@ -107,7 +131,11 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `status`) VALUES
-(1, 'Aniket', 'anikets@prdxn.com', '$2y$10$xqeOc.NK8fKMh0/x69sAqezWQ0NouxqCjsNI3p/YhOFWqwmgQ0v8q', NULL);
+(1, 'Aniket', 'anikets@prdxn.com', '$2y$10$xqeOc.NK8fKMh0/x69sAqezWQ0NouxqCjsNI3p/YhOFWqwmgQ0v8q', 1),
+(2, 'Aniket', 'ashrirao03@gmail.com', '$2y$10$33tUPZjfmt8.JtejYlTXLOiV/I.2ZiX4LyrdhCLeqvxAKmFQ3zr8O', 1),
+(3, 'Yadnesh', 'yadnesh@gmail.com', '$2y$10$YenwzMYk44Or2Q6Ev2BYluMdtuFu2x48nHNhCgqgiHKHA91vfW9Y.', 1),
+(4, 'Rohan', 'Rohan@gmail.com', '$2y$10$ZkXc/oH/fNM4eHKXonBusu3gZz3HbBkXpc4sea3xlgh9jhJJGlmj6', 1),
+(5, 'Aditya', 'Adityas@prdxn.com', '$2y$10$2TGZiXzMLhaYIWqsZTZ9hupI8MJ96fcMh0rPdktCZ1u6kC5b5PqFe', 1);
 
 --
 -- Indexes for dumped tables
@@ -118,6 +146,12 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`, `status`) VALUES
 --
 ALTER TABLE `answers`
   ADD PRIMARY KEY (`answer_id`);
+
+--
+-- Indexes for table `leaderboard`
+--
+ALTER TABLE `leaderboard`
+  ADD PRIMARY KEY (`rank_id`);
 
 --
 -- Indexes for table `questions`
@@ -142,6 +176,12 @@ ALTER TABLE `answers`
   MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
+-- AUTO_INCREMENT for table `leaderboard`
+--
+ALTER TABLE `leaderboard`
+  MODIFY `rank_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT for table `questions`
 --
 ALTER TABLE `questions`
@@ -151,7 +191,7 @@ ALTER TABLE `questions`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
