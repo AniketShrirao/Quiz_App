@@ -1,7 +1,6 @@
 <?php 
-  if(!isset($_SESSION['user_email'])) { 
-    include_once 'header.php';
-
+  // if(!isset($_SESSION['user_email'])) { 
+  include_once 'header.php';
 ?>
 <h1 class="leaderboard-title">Leaderboard</h1>
 <ul class='Ranking'>
@@ -18,7 +17,7 @@
     ?>
 </ul>
 <?php 
-    include_once 'footer.php';
-}
+  include_once 'footer.php';
+// }
 
 ?>

@@ -160,11 +160,7 @@ class Login_Validation extends Dbh
 							$_SESSION['user_id'] = $row['id'];
 							$_SESSION['user_name'] = $row['name'];
 							$_SESSION['user_email'] = $row['email'];
-							if($row['id'] == 1) {
-							$_SESSION['admin'] = 'yes';
-							} else {
-							$_SESSION['admin'] = 'no';
-							}
+							$_SESSION['block'] = false;
 							if(isset($_SESSION['user_email']))
 							header("Location: ../views/quiz.php");        
 							} else {

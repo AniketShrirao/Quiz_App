@@ -167,15 +167,17 @@ class queries extends Dbh{
 
 	public function displayRanks() 
 	{
+		$topper_name;
 	function pre_r($array) {
 		echo '<pre>';
 		print_r($array);
 		echo '</pre>';
 		}
-		$sql = "SELECT * FROM leaderboard WHERE score = 6 AND rank_id = 1 ORDER BY rank_id;";
+		$sql = "SELECT * FROM leaderboard ORDER BY score DESC LIMIT 1;";
 		$conn = $this->connect();
 		$rank_one = mysqli_query($conn ,$sql);
 		while($row = mysqli_fetch_array($rank_one)) {
+			$topper_name = $row['name'];
 		echo '
 		<li class="top">
 			<figure>
@@ -188,23 +190,24 @@ class queries extends Dbh{
 			</div>
 		</li>';
 		}
-		$sequel = "SELECT * FROM leaderboard WHERE rank_id <> 1 ORDER BY score DESC";
+		$sequel = "SELECT * FROM leaderboard ORDER BY score DESC;";
 		$conn = $this->connect();
 		$rankings = mysqli_query($conn ,$sequel);
 		while($row_two = mysqli_fetch_array($rankings)) {
-		echo '
-		<li>
-		<figure>
-		<img src="https://via.placeholder.com/250/A4DE02/000/?text='.substr($row_two['name'],0,1).'" alt="'.$row_two['name'].'">
-		</figure>
-		<h4>'.$row_two['name'].'</h4>
-		<span>'.$row_two['quizzed_at'].'</span>     
-		<div>
-			<a class="rating">'.$row_two['score'].'</a>
-		</div>
-		</li>';
+			if($topper_name !== $row_two['name']) {
+				echo '
+				<li>
+				<figure>
+				<img src="https://via.placeholder.com/250/A4DE02/000/?text='.substr($row_two['name'],0,1).'" alt="'.$row_two['name'].'">
+				</figure>
+				<h4>'.$row_two['name'].'</h4>
+				<span>'.$row_two['quizzed_at'].'</span>     
+				<div>
+					<a class="rating">'.$row_two['score'].'</a>
+				</div>
+				</li>';
+			}
 		}
 	}
-
 }
 ?>
